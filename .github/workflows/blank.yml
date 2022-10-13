@@ -29,7 +29,7 @@ jobs:
           url: ${{ secrets.VAULT_URL }}
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
-            "secret/data/${GITHUB_REPOSITORY#*/} SECRET"
+            secret/data/$(GITHUB_REPOSITORY#*/) SECRET
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
